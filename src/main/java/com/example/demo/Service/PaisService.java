@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,8 +16,9 @@ import com.example.demo.Model.Pais;
 import com.example.demo.Rpository.PaisRepository;
 
 @Service
-public class PaisService implements PaisRepository {
+public class PaisService implements PaisRepository  {
 	
+	@Autowired
 	private PaisRepository paisRepository;
 
 	@Override
@@ -93,7 +95,6 @@ public class PaisService implements PaisRepository {
 
 	@Override
 	public List<Pais> findAll() {
-		// TODO Auto-generated method stub
 		return paisRepository.findAll();
 	}
 
@@ -198,4 +199,5 @@ public class PaisService implements PaisRepository {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 }

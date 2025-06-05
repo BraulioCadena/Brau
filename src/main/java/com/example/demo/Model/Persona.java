@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     @Column(name = "nombre_completo")
     private String nombre;
@@ -45,10 +45,10 @@ public class Persona {
     }
 
     // Getters y setters
-    public int getId() {
+    public long getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
     public String getNombre() {

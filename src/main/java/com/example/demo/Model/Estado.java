@@ -13,7 +13,7 @@ import jakarta.persistence.JoinColumn;
 public class Estado {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
 
     @ManyToOne
     @JoinColumn(name = "id_pais")
@@ -29,7 +29,7 @@ public class Estado {
         this.nombre = nombre;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

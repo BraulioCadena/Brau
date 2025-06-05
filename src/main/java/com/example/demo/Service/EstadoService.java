@@ -16,8 +16,9 @@ import com.example.demo.Model.Estado;
 import com.example.demo.Rpository.EstadoRepository;
 
 @Service
-public class EstadoService implements EstadoRepository{
+public class EstadoService implements EstadoRepository {
 	
+
 	@Autowired
 	private EstadoRepository estadoRepository;
 
@@ -83,8 +84,8 @@ public class EstadoService implements EstadoRepository{
 
 	@Override
 	public <S extends Estado> List<S> findAll(Example<S> example, Sort sort) {
-		// TODO Auto-generated method stub
-		return estadoRepository.findAll();	}
+		return null;
+	}
 
 	@Override
 	public <S extends Estado> List<S> saveAll(Iterable<S> entities) {
@@ -95,7 +96,7 @@ public class EstadoService implements EstadoRepository{
 	@Override
 	public List<Estado> findAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return estadoRepository.findAll();
 	}
 
 	@Override
@@ -160,8 +161,8 @@ public class EstadoService implements EstadoRepository{
 
 	@Override
 	public List<Estado> findAll(Sort sort) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return estadoRepository.findAll(sort);
 	}
 
 	@Override
