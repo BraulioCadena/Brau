@@ -1,5 +1,6 @@
 package com.example.demo.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -39,7 +40,16 @@ public class EstadoService implements EstadoRepository {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	public List<Estado> findAllByCountry(Long id){
+		List<Estado> estadosRespuesta= new  ArrayList<>();
+		List<Estado> estados= estadoRepository.findAll();
+		for (int i=0; i<estados.size(); i++) {
+			if(estados.get(i).getPais().getId()==id){
+				estadosRespuesta.add(estados.get(i));
+			}
+		}
+			return estadosRespuesta;
+	}
 	@Override
 	public void deleteAllInBatch(Iterable<Estado> entities) {
 		// TODO Auto-generated method stub
